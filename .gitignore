@@ -1,0 +1,26 @@
+# Directorio target de Maven (donde se generan los archivos compilados)
+target/
+
+# Archivos de configuración de NetBeans
+.nb-gradle/
+.netbeans/
+
+# Archivos generados por el IDE
+*.class
+*.log
+*.idea/
+*.vscode/
+
+# Archivos de dependencias de Maven
+*.jar
+*.war
+*.ear
+
+# Archivos temporales o de respaldo
+*.bak
+*.tmp
+*.swp
+
+# Archivos de configuración local de la base de datos
+*.db
+
