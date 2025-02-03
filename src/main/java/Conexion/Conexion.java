@@ -23,10 +23,6 @@ public class Conexion {
 
     private static Connection instancia = null;
     
- // Constructor privado no accesible desde otras clases
-    private Conexion() {
-
-    }
 
     // Método de clase para acceder a la instancia del objeto Connection
     public static Connection getInstance() {
