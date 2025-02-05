@@ -9,11 +9,10 @@ import java.util.List;
  *
  * @author yoriel
  */
-public class Imascota {
     
 
 
-public interface IMascota {
+public interface Imascota {
     
    // Obtener todos los registros de la tabla mascota
     List<MascotaDTO> getAll() throws SQLException;
@@ -38,5 +37,4 @@ public interface IMascota {
 
     // Obtener todas las mascotas tratadas por un veterinario (con su id)
     List<MascotaDTO> getMascotasByVeterinarioId(int idVeterinario) throws SQLException;
-}
 }

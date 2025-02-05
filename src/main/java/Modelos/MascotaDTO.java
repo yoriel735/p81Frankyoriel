@@ -36,7 +36,7 @@ public class MascotaDTO {
         this.nombreMascota = nombreMascota;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
@@ -72,7 +72,7 @@ public class MascotaDTO {
     private int idMascota;
     private int numeroChip;
     private String nombreMascota;
-    private int peso;
+    private double peso;
     private LocalDate fechaNacimiento; 
     private String tipo;
     private int id_veterinario;
