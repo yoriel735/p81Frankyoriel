@@ -6,7 +6,8 @@ package Modelos;
  * @author yoriel
  */
 public class VeterinariosDTO {
-    
+
+  
       
     private int idVeterinario;
     private String nifVeterinario;
@@ -14,6 +15,10 @@ public class VeterinariosDTO {
     private String direccion;
     private String telefono;
     private String email;
+
+ public VeterinariosDTO() {
+     
+ }
 
     public int getIdVeterinario() {
         return idVeterinario;
@@ -62,6 +67,12 @@ public class VeterinariosDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+       return "Veterinario [ID=" + idVeterinario + ", NIF=" + nifVeterinario + ", Nombre=" + nombreVeterinario + 
+           ", Dirección=" + direccion + ", Teléfono=" + telefono + ", Email=" + email + "]";
+}
     
   public VeterinariosDTO(int idVeterinario, String nifVeterinario, String nombreVeterinario, String direccion, String telefono, String email) {
         this.idVeterinario = idVeterinario;
@@ -70,6 +81,8 @@ public class VeterinariosDTO {
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
+        
+        
     }
 }
 
