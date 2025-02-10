@@ -32,7 +32,7 @@ public class MascotasDAO implements Imascota {
                 mascota.setIdMascota(rs.getInt("id"));
                 mascota.setNumeroChip(rs.getInt("numero_chip"));
                 mascota.setNombreMascota(rs.getString("nombre"));
-                mascota.setPeso((int) rs.getDouble("peso"));
+               mascota.setPeso(rs.getDouble("peso"));
                 mascota.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 mascota.setTipo(rs.getString("tipo"));
                 mascota.setId_veterinario(rs.getInt("id_veterinario"));
@@ -44,28 +44,29 @@ public class MascotasDAO implements Imascota {
 
     // Método para obtener una mascota por su id (clave primaria)
     @Override
-    public MascotaDTO findByPk(int pk) throws SQLException {
-        MascotaDTO mascota = null;
-        Connection conn = Conexion.getInstance();
-        String sql = "SELECT * FROM mascota WHERE id = ?";
-        
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, pk);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    mascota = new MascotaDTO();
-                    mascota.setIdMascota(rs.getInt("id"));
-                    mascota.setNumeroChip(rs.getInt("numero_chip"));
-                    mascota.setNombreMascota(rs.getString("nombre"));
-                    mascota.setPeso((int) rs.getDouble("peso"));
-                    mascota.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
-                    mascota.setTipo(rs.getString("tipo"));
-                    mascota.setId_veterinario(rs.getInt("id_veterinario"));
-                }
+public MascotaDTO findByPk(int pk) throws SQLException {
+    MascotaDTO mascota = null;
+    Connection conn = Conexion.getInstance();
+    String sql = "SELECT * FROM mascota WHERE id = ?";
+
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, pk);
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                mascota = new MascotaDTO();
+                mascota.setIdMascota(rs.getInt("id"));
+                mascota.setNumeroChip(rs.getInt("numero_chip"));
+                mascota.setNombreMascota(rs.getString("nombre"));
+                mascota.setPeso(rs.getDouble("peso"));  // Corregido aquí también
+                mascota.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                mascota.setTipo(rs.getString("tipo"));
+                mascota.setId_veterinario(rs.getInt("id_veterinario"));
             }
         }
-        return mascota;
     }
+    return mascota;
+}
+
 
     // Método para insertar una nueva mascota
     @Override

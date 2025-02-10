@@ -10,8 +10,34 @@ import java.time.LocalDate;
  *
  * @author yoriel
  */
+import java.time.LocalDate;
+
 public class MascotaDTO {
 
+    private int idMascota;
+    private int numeroChip;
+    private String nombreMascota;
+    private double peso;
+    private LocalDate fechaNacimiento; 
+    private String tipo;
+    private int id_veterinario;
+
+    // Constructor
+    public MascotaDTO(int idMascota, int numeroChip, String nombreMascota, double peso, LocalDate fechaNacimiento, String tipo, int id_veterinario) {
+        this.idMascota = idMascota;
+        this.numeroChip = numeroChip;
+        this.nombreMascota = nombreMascota;
+        this.peso = peso;
+        this.fechaNacimiento = fechaNacimiento;
+        this.tipo = tipo;
+        this.id_veterinario = id_veterinario;
+    }
+    
+    public MascotaDTO() {
+        
+    }
+
+    // Getters y Setters
     public int getIdMascota() {
         return idMascota;
     }
@@ -40,7 +66,7 @@ public class MascotaDTO {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -67,14 +93,10 @@ public class MascotaDTO {
     public void setId_veterinario(int id_veterinario) {
         this.id_veterinario = id_veterinario;
     }
-    
-    
-    private int idMascota;
-    private int numeroChip;
-    private String nombreMascota;
-    private double peso;
-    private LocalDate fechaNacimiento; 
-    private String tipo;
-    private int id_veterinario;
+
+    @Override
+    public String toString() {
+        return "Mascota [ID=" + idMascota + ", Nombre=" + nombreMascota + ", Tipo=" + tipo + ", Peso=" + peso + 
+                ", Fecha de nacimiento=" + fechaNacimiento + ", Veterinario ID=" + id_veterinario + "]";
+    }
 }
-    

@@ -68,14 +68,15 @@ public class VeterinarioDAO implements IVeterinario {
     @Override
     public int insertVeterinario(VeterinariosDTO veterinario) throws SQLException {
         Connection conn = Conexion.getInstance();
-        String sql = "INSERT INTO veterinario (nif, nombre, direccion, telefono, email) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO veterinario ( ID, nif, nombre, direccion, telefono, email) VALUES (?, ?, ?, ?, ?, ?)";
         
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, veterinario.getNifVeterinario());
-            stmt.setString(2, veterinario.getNombreVeterinario());
-            stmt.setString(3, veterinario.getDireccion());
-            stmt.setString(4, veterinario.getTelefono());
-            stmt.setString(5, veterinario.getEmail());
+            stmt.setInt(1, veterinario.getIdVeterinario());
+            stmt.setString(2, veterinario.getNifVeterinario());
+            stmt.setString(3, veterinario.getNombreVeterinario());
+            stmt.setString(4, veterinario.getDireccion());
+            stmt.setString(5, veterinario.getTelefono());
+            stmt.setString(6, veterinario.getEmail());
             return stmt.executeUpdate(); // Retorna el número de filas afectadas
         }
     }
@@ -84,15 +85,16 @@ public class VeterinarioDAO implements IVeterinario {
     @Override
     public int insertVeterinario(List<VeterinariosDTO> lista) throws SQLException {
         Connection conn = Conexion.getInstance();
-        String sql = "INSERT INTO veterinario (nif, nombre, direccion, telefono, email) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO veterinario (ID,nif, nombre, direccion, telefono, email) VALUES (?, ?, ?, ?, ?,?)";
         
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             for (VeterinariosDTO veterinario : lista) {
-                stmt.setString(1, veterinario.getNifVeterinario());
-                stmt.setString(2, veterinario.getNombreVeterinario());
-                stmt.setString(3, veterinario.getDireccion());
-                stmt.setString(4, veterinario.getTelefono());
-                stmt.setString(5, veterinario.getEmail());
+                stmt.setInt(1, veterinario.getIdVeterinario());
+                stmt.setString(2, veterinario.getNifVeterinario());
+                stmt.setString(3, veterinario.getNombreVeterinario());
+                stmt.setString(4, veterinario.getDireccion());
+                stmt.setString(5, veterinario.getTelefono());
+                stmt.setString(6, veterinario.getEmail());
                 stmt.addBatch(); // Agrega el veterinario al batch
             }
             int[] rows = stmt.executeBatch(); // Ejecuta todos los inserts a la vez
