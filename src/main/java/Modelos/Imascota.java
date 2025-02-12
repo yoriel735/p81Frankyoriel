@@ -21,10 +21,10 @@ public interface Imascota {
     MascotaDTO findByPk(int pk) throws SQLException;
 
     // Insertar una nueva mascota en la base de datos
-    int insertMascota(MascotaDTO mascota) throws SQLException;
+    Integer insertMascota(MascotaDTO mascota) throws SQLException;
 
     // Insertar varias mascotas a la vez
-    int insertMascota(List<MascotaDTO> lista) throws SQLException;
+    Integer insertMascota(List<MascotaDTO> lista) throws SQLException;
 
     // Eliminar una mascota de la base de datos
     int deleteMascota(MascotaDTO mascota) throws SQLException;

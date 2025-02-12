@@ -20,7 +20,7 @@ public class MascotaDTO {
     private double peso;
     private LocalDate fechaNacimiento; 
     private String tipo;
-    private int id_veterinario;
+    private Integer id_veterinario;
 
     // Constructor
     public MascotaDTO(int idMascota, int numeroChip, String nombreMascota, double peso, LocalDate fechaNacimiento, String tipo, int id_veterinario) {
@@ -86,11 +86,11 @@ public class MascotaDTO {
         this.tipo = tipo;
     }
 
-    public int getId_veterinario() {
+    public Integer getId_veterinario() {
         return id_veterinario;
     }
 
-    public void setId_veterinario(int id_veterinario) {
+    public void setId_veterinario(Integer id_veterinario) {
         this.id_veterinario = id_veterinario;
     }
 

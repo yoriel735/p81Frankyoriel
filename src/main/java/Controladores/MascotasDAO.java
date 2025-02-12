@@ -70,7 +70,7 @@ public MascotaDTO findByPk(int pk) throws SQLException {
 
     // Método para insertar una nueva mascota
     @Override
-    public int insertMascota(MascotaDTO mascota) throws SQLException {
+    public Integer insertMascota(MascotaDTO mascota) throws SQLException {
         Connection conn = Conexion.getInstance();
         String sql = "INSERT INTO mascota (numero_chip, nombre, peso, fecha_nacimiento, tipo, id_veterinario) VALUES (?, ?, ?, ?, ?, ?)";
         
@@ -87,7 +87,7 @@ public MascotaDTO findByPk(int pk) throws SQLException {
 
     // Método para insertar varias mascotas
     @Override
-    public int insertMascota(List<MascotaDTO> lista) throws SQLException {
+    public Integer insertMascota(List<MascotaDTO> lista) throws SQLException {
         Connection conn = Conexion.getInstance();
         String sql = "INSERT INTO mascota (numero_chip, nombre, peso, fecha_nacimiento, tipo, id_veterinario) VALUES (?, ?, ?, ?, ?, ?)";
         
